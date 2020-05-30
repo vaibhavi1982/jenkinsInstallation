@@ -1,0 +1,17 @@
+---
+- name: create user and copy passwd file
+  hosts: all
+  tasks:
+      - name: user creation
+        user:
+          name:kiran
+          password: abc
+          uid:678
+          home: /home/kiran
+       - name:copy password into users home dir
+         copy:
+          src: /etc/passwd
+          dest: /home/kiran
+...          
+
+

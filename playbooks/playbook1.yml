@@ -1,0 +1,16 @@
+---
+- name: Install git and clone a remote repository
+  hosts: all
+  tasks:
+   - name: Install git
+     yum:
+      name: git
+       state:present
+   - name: clone remote git repository
+     git:
+      repo: https://github.com/vaibhavi1982/game-of-life1.git
+      dest: /home/ec2/newgit 
+...      
+
+               
+
